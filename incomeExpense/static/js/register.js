@@ -1,8 +1,23 @@
 const usernameField = document.getElementById('usernameField');
-const feedbackFieldArea = document.querySelector('.invalid-feedback')
-const emailField = document.querySelector('#emailField')
-const emailFeedbackArea = document.querySelector('.emailFeedbackArea')
-const usernameSuccessOutput = document.querySelector('.usernameSuccessOutput')
+const feedbackFieldArea = document.querySelector('.invalid-feedback');
+const emailField = document.querySelector('#emailField');
+const emailFeedbackArea = document.querySelector('.emailFeedbackArea');
+const usernameSuccessOutput = document.querySelector('.usernameSuccessOutput');
+const showPassword = document.querySelector('.showPassword');
+const passwordField = document.querySelector('#passwordField');
+
+// Password Show
+const handleToggleInput = (e) => {
+    if (showPassword.textContent === 'SHOW') {
+        showPassword.textContent = 'HIDE';
+        passwordField.setAttribute('type', 'text')
+    } else {
+        showPassword.textContent = 'SHOW';
+        passwordField.setAttribute('type', 'password')
+    }
+};
+
+showPassword.addEventListener('click', handleToggleInput);
 
 // Email Validation
 emailField.addEventListener('keyup', (e) => {
